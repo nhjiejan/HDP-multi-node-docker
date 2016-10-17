@@ -1,0 +1,10 @@
+#VERSION_NUMBER=2.1.2.1-418
+
+[Updates-ambari-2.1.2.1]
+name=ambari-2.1.2.1 - Updates
+baseurl=http://192.168.33.10:8033/ambari-2.1.2.1/centos6
+gpgcheck=1
+gpgkey=http://192.168.33.10:8033/ambari-2.1.2.1/centos6/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
+enabled=1
+priority=1
+

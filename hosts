@@ -1,0 +1,3 @@
+192.168.33.10 hadoop-master.example.org
+192.168.33.11 hadoop-node01.example.org
+192.168.33.12 hadoop-node02.example.org
