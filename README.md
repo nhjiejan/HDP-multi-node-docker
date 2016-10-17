@@ -2,8 +2,8 @@
 provisioning of a multi-node hadoop cluster using docker
 
 # known issues:
--- fail on build when service tries to start hdfs. docker cannot su as the dfs user. issues with issueing commiand "ulimit -n" as the hdfs user.
--- the ambari-agent on the master node cannot be named the same hostname as the host which is why the name is hardcoded in the ```start_containers.sh```
+* fail on build when service tries to start hdfs. docker cannot su as the dfs user. issues with issueing commiand "ulimit -n" as the hdfs user.
+* the ambari-agent on the master node cannot be named the same hostname as the host which is why the name is hardcoded in the ```start_containers.sh```
 as it will try to point to itself to find the ambari-server and therefore fail.
 
 # to run
