@@ -1,12 +1,13 @@
 #!/bin/bash
 
-docker run -d --name ambari-server-container \
+docker run --privileged -d --name ambari-server-container \
+-h $(hostname -f) \
 -p 8080:8080 \
 -p 8440:8440 \
 -p 8441:8441 hjiejan/ambari-server-2.1.2.1
 
 
-docker run -d --name ambari-agent-container \
+docker run --privileged -d --name ambari-agent-container \
 -h master-agent \
 -v /vagrant/docker-hadoop-multi-node/ambari-agent.ini:/etc/ambari-agent/conf/ambari-agent.ini \
 -p 2181:2181 \

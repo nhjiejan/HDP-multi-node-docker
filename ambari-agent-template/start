@@ -3,6 +3,8 @@
 #setup environment
 setenforce 0
 echo umask 0022 >> /etc/profile
+# update security limits
+cat /limits.conf >> /etc/security/limits.conf
 
 #enable ssh
 cat /root/.ssh/id_rsa.pub > /root/.ssh/authorized_keys
@@ -19,6 +21,9 @@ sed -i "s/hostname=localhost/hostname=${AMBARI_SERVER}/g" /etc/ambari-agent/conf
 
 # updates hosts file
 cat /hosts >> /etc/hosts
+
+# create hdfs user to test ulimit issue
+useradd hdfs -m -s /bin/bash -u 1001
 
 service sshd restart
 service ambari-agent restart

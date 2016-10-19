@@ -4,6 +4,9 @@
 setenforce 0
 echo umask 0022 >> /etc/profile
 
+# update security limits
+cat /limits.conf >> /etc/security/limits.conf
+
 # enable ssh
 cat /root/.ssh/id_rsa.pub > /root/.ssh/authorized_keys
 

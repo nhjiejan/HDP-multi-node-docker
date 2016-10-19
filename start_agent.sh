@@ -1,4 +1,4 @@
-docker run -d --name ambari-agent-container \
+docker run --privileged -d --name ambari-agent-container \
 -h $(hostname -f) \
 -v /vagrant/docker-hadoop-multi-node/ambari-agent.ini:/etc/ambari-agent/conf/ambari-agent.ini \
 -p 2181:2181 \

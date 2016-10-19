@@ -1,6 +1,6 @@
 FROM centos:6
 
-RUN yum install openssh-server -y
+RUN yum install -y openssh-server wget
 RUN yum install openssh-clients -y
 RUN mkdir /root/.ssh
 RUN touch /root/.ssh/authorized_keys
@@ -13,11 +13,20 @@ RUN chkconfig sshd on
 
 ADD ambari.repo /etc/yum.repos.d/
 #ADD hdp.repo /etc/yum.repos.d/
+
+#config files
 ADD hosts /
-#RUN echo "192.168.33.10   hadoop-master.example.org " >> /etc/hosts
+ADD limits.conf /
+
+## INSTALL JAVA
+RUN wget 192.168.33.10:8033/jdk-8u101-linux-x64.rpm -O /jdk-8u101-linux-x64.rpm
+RUN chmod 755 jdk-8u101-linux-x64.rpm
+RUN rpm -ivh jdk-8u101-linux-x64.rpm
+ENV JAVA_HOME=/usr/java/default
+
 
 RUN yum install ambari-agent -y
 RUN yum install ambari-server -y
-RUN ambari-server setup -s
+RUN ambari-server setup -s -j /usr/java/default
 ADD ./start /
 CMD ["/start"]

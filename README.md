@@ -16,4 +16,10 @@ folders.
 5. export and load agent image to all hosts in your cluster
 6. update the ambari-agent.init file to point to your ambari-agent host
 7. run ```start_containers.sh``` on master-node and ```start_agent.sh``` on all other hosts
-8. provision cluster with ambari via master-node-host>:8080. 
+8. provision cluster with ambari via http://<master-node-host>:8080. 
+
+### Ambari Console:
+
+* point to the local HDP binaries during the install by replacing the default IP addresses (for Centos 6) with:
+	HDP-2.3:		http://192.168.33.10:8033/HDP/centos6/2.x/updates/2.3.2.0
+	HDP-UTILS-1.1.0.20	http://192.168.33.10:8033/HDP-UTILS-1.1.0.20/repos/centos6
