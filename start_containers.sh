@@ -43,5 +43,6 @@ docker run --privileged -d --name ambari-agent-container \
 -p 45455:45454 \
 -p 8042:8042 \
 -p 6667:6667 \
+-p 6188:6188 \
 -p 9995:9995 hjiejan/ambari-agent-2.1.2.1
 
