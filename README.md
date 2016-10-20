@@ -21,7 +21,7 @@ folders.
 5. export and load agent image to all hosts in your cluster
 6. update the ambari-agent.init file to point to your ambari-agent host
 7. run ```start_containers.sh``` on master-node and ```start_agent.sh``` on all other hosts
-8. provision cluster with ambari via http://"<master-node-host>":8080. 
+8. provision cluster with ambari via http://"master-node-host":8080. 
 
 ### Ambari Console:
 
