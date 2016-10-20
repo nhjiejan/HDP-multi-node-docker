@@ -25,7 +25,7 @@ folders.
 
 ### Ambari Console:
 
-* point to the local HDP binaries during the install by replacing the default IP addresses (for Centos 6) with:
-	HDP-2.3:		http://192.168.33.10:8033/HDP/centos6/2.x/updates/2.3.2.0
-	HDP-UTILS-1.1.0.20	http://192.168.33.10:8033/HDP-UTILS-1.1.0.20/repos/centos6
+point to the local HDP binaries during the install by replacing the default IP addresses (for Centos 6) with:
+	* HDP-2.3:  		        http://192.168.33.10:8033/HDP/centos6/2.x/updates/2.3.2.0
+	* HDP-UTILS-1.1.0.20:  	    http://192.168.33.10:8033/HDP-UTILS-1.1.0.20/repos/centos6
 
